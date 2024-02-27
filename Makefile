@@ -9,8 +9,8 @@ setup:
 	. venv/bin/activate; \
 	pip install --upgrade pip; \
 	pip install -r requirements.txt
-	@echo "Running database migrations..."
-	flask db upgrade
+	# @echo "Running database migrations..."
+	# flask db upgrade
 
 run:
 	. student-api-venv/bin/activate; \
