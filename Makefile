@@ -13,7 +13,7 @@ setup:
 	# flask db upgrade
 
 run:
-	. student-api-venv/bin/activate; \
+	. venv/bin/activate; \
 	FLASK_APP=run.py flask run
 
 # test:
