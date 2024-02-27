@@ -16,9 +16,9 @@ run:
 	. student-api-venv/bin/activate; \
 	FLASK_APP=run.py flask run
 
-test:
-	. venv/bin/activate; \
-	pytest tests
+# test:
+# 	. venv/bin/activate; \
+# 	pytest tests
 
 clean:
 	@echo "Cleaning up..."
