@@ -1,13 +1,18 @@
+from crypt import methods
 from flask import jsonify, request, abort
 from app import app, db
 from app.models import Student
+from sqlalchemy import text
 
 # Get all students
 @app.route('/api/v1/students', methods=['GET'])
 def get_students():
     students = Student.query.all()
-    return jsonify([student.serialize() for student in students])
-
+    if students:
+        return jsonify([student.serialize() for student in students])
+    else:
+        return jsonify({'message': 'No student records found'})
+    
 # Get a student by ID
 @app.route('/api/v1/students/<int:student_id>', methods=['GET'])
 def get_student(student_id):
@@ -40,7 +45,24 @@ def update_student(student_id):
 # Delete a student record
 @app.route('/api/v1/students/<int:student_id>', methods=['DELETE'])
 def delete_student(student_id):
-    student = Student.query.get_or_404(student_id)
-    db.session.delete(student)
+    student = Student.query.get(student_id)
+    if student:
+        db.session.delete(student)
+        db.session.commit()
+        return jsonify({'message': 'Student deleted successfully'})
+    else:
+        return jsonify({'message': 'Student does not exist'})
+        
+
+@app.route('/api/v1/students', methods=['DELETE'])
+def clear():
+    Student.query.delete()
     db.session.commit()
-    return jsonify({'message': 'Student deleted successfully'})
+
+    db.session.execute(text("ALTER SEQUENCE student_id_seq RESTART WITH 1"))
+    db.session.commit()
+    return jsonify({'message': 'Deleted all students'})
+
+@app.route('/api/v1/students/health', methods=['GET'])
+def healthcheck():
+    return jsonify({'status': 'ok'})
