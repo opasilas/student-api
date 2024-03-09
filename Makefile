@@ -1,6 +1,6 @@
 # Makefile for managing Flask application
 
-.PHONY: setup run test clean
+.PHONY: build test
 
 build:
 	@echo "Building app container"
