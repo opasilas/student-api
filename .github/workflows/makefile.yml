@@ -3,8 +3,8 @@ name: Makefile CI
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - 'app/**'
+    # paths:
+    #   - 'app/**'
   workflow_dispatch:
   pull_request:
     branches: [ "main" ]
