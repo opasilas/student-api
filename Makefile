@@ -6,7 +6,7 @@ build:
 	@echo "Building app container"
 	@echo "Building db container"
 
-	docker-compose up --build
+	docker-compose up --build -d
 
 # setup:
 # 	@echo "Setting up virtual environment..."
