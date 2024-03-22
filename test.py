@@ -2,7 +2,7 @@ from email import header
 import requests, json
 
 BASE_URL = "http://127.0.0.1:8000/api/v1/students"
-data = {'name': 'Opa', 'email': 'opa@gmail.com'}
+data = {'name': 'Opa', 'email': 'opa8@gmail.com'}
 headers = {'Content-Type': 'application/json'}
 
 
