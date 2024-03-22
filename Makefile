@@ -31,7 +31,7 @@ build:
 # 	pytest tests
 
 test:
-	python test.py
+	python ./test.py
 
 # clean:
 # 	@echo "Cleaning up..."
