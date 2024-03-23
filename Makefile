@@ -30,9 +30,7 @@ build:
 # 	. venv/bin/activate; \
 # 	pytest tests
 
-test:
-	
-	python3 test.py
+test:	
 	curl http://127.0.0.1:8000/api/v1/students/health
 
 # clean:
