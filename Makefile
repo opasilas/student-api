@@ -31,8 +31,7 @@ build:
 # 	pytest tests
 
 test:	
-	curl http://localhost:8000/api/v1/students/health
-
+	python test.py
 # clean:
 # 	@echo "Cleaning up..."
 # 	rm -rf venv
