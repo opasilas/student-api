@@ -31,7 +31,7 @@ build:
 # 	pytest tests
 
 test:	
-	curl http://127.0.0.1:8000/api/v1/students/health
+	curl http://localhost:8000/api/v1/students/health
 
 # clean:
 # 	@echo "Cleaning up..."

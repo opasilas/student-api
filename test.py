@@ -6,10 +6,10 @@ data = {'name': 'Opa', 'email': 'opa8@gmail.com'}
 headers = {'Content-Type': 'application/json'}
 
 
-# response = requests.get(BASE_URL)
-# print(response.json())
+response = requests.get(BASE_URL)
+print(response.json())
 
-# input()
+input()
 
 # response = requests.post(BASE_URL, data=json.dumps(data), headers=headers)
 # print(response.json())
