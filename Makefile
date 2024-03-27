@@ -33,8 +33,9 @@ build:
 test:	
 	docker ps
 	
-	docker exec -it student-api_student-api-app_1 sh
-	apt install curl
+	docker exec -i student-api_student-api-app_1 sh
+	apt-get update
+	apt-get install curl
 	curl http://localhost:5000/api/v1/students/health 
 # clean:
 # 	@echo "Cleaning up..."
