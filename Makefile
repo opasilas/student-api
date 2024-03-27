@@ -31,7 +31,7 @@ build:
 # 	pytest tests
 
 test:	
-	python test.py
+	docker exec student-api-app curl http://localhost:5000/api/v1/students/health 
 # clean:
 # 	@echo "Cleaning up..."
 # 	rm -rf venv

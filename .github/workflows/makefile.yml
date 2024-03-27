@@ -26,6 +26,11 @@ jobs:
     # - name: configure
     #   run: ./configure
 
+    - name: Lint with Ruff
+      run: |
+        pip install ruff
+        ruff --output-format=github .
+      continue-on-error: true
     - name: Build docker 
       run: make build
 
