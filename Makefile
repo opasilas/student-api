@@ -33,7 +33,7 @@ build:
 test:	
 	docker ps
 	
-# docker exec student-api-app curl http://localhost:5000/api/v1/students/health 
+	docker exec student-api_student-api-app_1 curl http://localhost:5000/api/v1/students/health 
 # clean:
 # 	@echo "Cleaning up..."
 # 	rm -rf venv
