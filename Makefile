@@ -36,7 +36,8 @@ test:
 	docker exec -i student-api_student-api-app_1 sh
 	sudo apt-get update
 	sudo apt-get install curl
-	curl http://localhost:5000/api/v1/students/health 
+	sleep 5
+	curl http://localhost:8000/api/v1/students/health 
 # clean:
 # 	@echo "Cleaning up..."
 # 	rm -rf venv
