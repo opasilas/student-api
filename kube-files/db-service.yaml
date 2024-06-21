@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yaml
+    kompose.version: 1.34.0 (cbf2835db)
+  labels:
+    io.kompose.service: db
+  name: db
+spec:
+  ports:
+    - name: "9001"
+      port: 9001
+      targetPort: 5432
+    - name: "5432"
+      port: 5432
+      targetPort: 5432
+  selector:
+    io.kompose.service: db
+
+
+          # livenessProbe:
+          #   exec:
+          #     command: {{ toYaml .Values.livenessProbe.exec.command | nindent 12 }}
