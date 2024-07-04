@@ -162,4 +162,3 @@ cython_debug/
 
 student-api-venv/
 .DS_Store
-cicd.yaml
