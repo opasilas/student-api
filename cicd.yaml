@@ -14,7 +14,7 @@ spec:
     namespace: student-application
   syncPolicy:
     syncOptions:
-    - CreateNamespace: true
+    - CreateNamespace=true
 
     automated:
       selfHeal: true
