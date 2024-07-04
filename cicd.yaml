@@ -1,14 +1,35 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-student-api
+  name: student-api-hlm
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/opasilas/student-api.git
     targetRevision: HEAD
-    path: helm-charts
+    path: helm-charts/student-hlm
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:    
+    automated:
+      selfHeal: true
+      prune: true
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: db-hlm
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/opasilas/student-api.git
+    targetRevision: HEAD
+    path: helm-charts/db-hlm
   destination:
     server: https://kubernetes.default.svc
     namespace: default
